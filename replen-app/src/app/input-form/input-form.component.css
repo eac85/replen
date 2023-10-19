@@ -1,0 +1,81 @@
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.aligned-top {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.stacked-card {
+  margin-top: 16px; /* Adjust the margin-top value for the desired spacing between the cards */
+}
+
+.container {
+    background-color: #87b6bd;
+    width: 90%;
+    overflow: auto;
+}
+mat-card {
+  width: 100%;
+  background-color: #DCF46F;
+  color: navy;
+  display: block;
+}
+
+.color-scheme1 {
+  background-color: #F2E9DE;
+  color: #577AB6;
+}
+
+/* Custom CSS class for the mat-form-field */
+.custom-form-field {
+  color: #D7D702; /* Text color */
+}
+
+/* Custom CSS class for the mat-label */
+.custom-label {
+  color: #577AB6; /* Label text color */
+}
+
+/* Custom CSS class for the mat-underline */
+.custom-underline {
+  border-color: #D2BBD2; /* Underline color */
+}
+
+/* Custom CSS class for the mat-input */
+.custom-input {
+  color: #D7D702; /* Input text color */
+}
+
+mat-list { overflow: auto; }
+
+.close-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: transparent;
+  color: #000000; /* Change the color of the X as desired */
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.close-button:hover {
+  color: #F45E30; /* Change the color of the X on hover if desired */
+  background-color: none;
+}
+
+.scrollable-container {
+  height: 300px; /* Set a fixed height for the scrollable container */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+

@@ -1,0 +1,88 @@
+<div class="color-scheme1">
+<mat-grid-list cols="3" rowHeight="500px">
+  <mat-grid-tile>
+    <div>
+      <div>
+        <mat-form-field class="custom-form-field">
+          <mat-label class="custom-label">Style Code:</mat-label>
+          <input matInput class="custom-input" matInput [(ngModel)]="styleCode" placeholder="Enter style code">
+          <div class="custom-underline"></div> 
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <mat-label>Color Code:</mat-label>
+          <input matInput [(ngModel)]="colorCode" placeholder="Enter color code">
+        </mat-form-field>
+      </div>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <div>
+      <div>
+        <mat-form-field>
+          <mat-label>XS:</mat-label>
+          <input matInput [(ngModel)]="xsSizeAmount" type="number" placeholder="Enter size amount">
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <mat-label>S:</mat-label>
+          <input matInput [(ngModel)]="sSizeAmount" type="number" placeholder="Enter size amount">
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <mat-label>M:</mat-label>
+          <input matInput [(ngModel)]="mSizeAmount" type="number" placeholder="Enter size amount">
+        </mat-form-field>
+      </div>
+      <div class="form">
+        <mat-form-field>
+          <mat-label>L:</mat-label>
+          <input matInput [(ngModel)]="lSizeAmount" type="number" placeholder="Enter size amount">
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <mat-label>XL:</mat-label>
+          <input matInput [(ngModel)]="xlSizeAmount" type="number" placeholder="Enter size amount">
+        </mat-form-field>
+      </div>
+      <button mat-raised-button  (click)="submitForm()" class="custom-primary-button">Submit</button>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile  >
+    <div fxLayout="column" class="container"  >
+    <mat-card  *ngFor="let data of dataService.getSubmittedData()" fxFlex="1000px" [style.background-color]="data.color">
+        <button mat-button class="close-button" (click)="closeCard(data)">X</button>
+      <mat-card-header>
+        <mat-card-title><strong>{{ data.styleCode }}</strong> </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p><strong>{{ data.colorCode }}</strong> </p>
+        <mat-grid-list cols="3" rowHeight="50px">
+          <mat-grid-tile >
+            <div>
+             {{ data.xsSizeAmount }} XS
+             <br> {{ data.sSizeAmount }} S
+           </div>
+         </mat-grid-tile>
+         <mat-grid-tile >
+          <div>
+            {{ data.mSizeAmount }} M
+           <br> {{ data.lSizeAmount }} L
+         </div>
+       </mat-grid-tile>
+       <mat-grid-tile >
+          <div>
+           {{ data.xlSizeAmount }} XL
+         </div>
+       </mat-grid-tile>
+     </mat-grid-list>
+   </mat-card-content>
+ </mat-card>
+</div>
+</mat-grid-tile>
+</mat-grid-list>
+<div>
