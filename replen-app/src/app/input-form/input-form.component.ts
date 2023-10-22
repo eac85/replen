@@ -1,9 +1,11 @@
 import { Component, Input, EventEmitter, Output  } from '@angular/core';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {FormsModule} from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
 import { DataService } from '../data.service'; // Import the DataService
-
+import { MatDialog } from '@angular/material/dialog';
+import { ModalContentComponent } from '../modal-content/modal-content.component';
+import { slideUpAnimation } from '../animations/slide-up.animation';
 
 @Component({
   selector: 'app-input-form',
@@ -11,7 +13,6 @@ import { DataService } from '../data.service'; // Import the DataService
   styleUrls: ['./input-form.component.css'],
 })
 export class InputFormComponent {
-  colors: string[] = ['#D0605B', '#D7894C', '#E9D37E', '#4A7A6F', '#6EBAAF', '#ABC8CB', '#6E5AD4', '#4B60D3', '#4E7FCB'];
   styleCode: string;
   colorCode: string;
   xsSizeAmount: number;
@@ -23,7 +24,7 @@ export class InputFormComponent {
   dataService: DataService;
   count: number = -1;
 
-  constructor( dataService: DataService) {
+  constructor( dataService: DataService, private dialog: MatDialog) {
       this.xsSizeAmount = 0; // or any other default value you want to assign
       this.sSizeAmount= 0; 
       this.mSizeAmount= 0; 
@@ -34,24 +35,6 @@ export class InputFormComponent {
       this.dataService = dataService;
     }
 
-    submitForm() {
-    // Handle form submission logic here
-     const newData = {
-      styleCode: this.styleCode,
-      colorCode: this.colorCode,
-      xsSizeAmount: this.xsSizeAmount,
-      sSizeAmount: this.sSizeAmount,
-      mSizeAmount: this.mSizeAmount,
-      lSizeAmount: this.lSizeAmount,
-      xlSizeAmount: this.xlSizeAmount,
-      color: this.getRandomColor()
-    };
-
-    this.dataService.addSubmittedData(newData); 
-    this.showAlignedContent = true;
-    this.clearData();
-  }
-
   closeCard(data: any) {
     const index = this.dataService.getSubmittedData().indexOf(data);
     if (index !== -1) {
@@ -59,22 +42,12 @@ export class InputFormComponent {
     }
   }
 
-  getRandomColor(): string {
-    if(this.count >= this.colors.length){
-      this.count = -1;
-    }
-    this.count = this.count + 1;
-    return this.colors[this.count];
-  }
-
-  clearData() {
-     this.xsSizeAmount = 0; // or any other default value you want to assign
-      this.sSizeAmount= 0; 
-      this.mSizeAmount= 0; 
-      this.lSizeAmount= 0; 
-      this.xlSizeAmount= 0; 
-      this.styleCode = '0';
-      this.colorCode = '0';
+   openModal() {
+    this.dialog.open(ModalContentComponent, {
+      panelClass: 'custom-dialog-container', // Add a custom class for styling if needed
+      position: { bottom: '0' },
+      autoFocus: false, // Prevents auto-focusing on the first form field
+    });
   }
 
 }
