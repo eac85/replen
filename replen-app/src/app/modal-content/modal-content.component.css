@@ -1,0 +1,15 @@
+/* modal-content.component.css */
+.modal-container {
+  background-color: #EAD9C6;
+  width: 100%;
+  min-width: 100vh;
+  min-height: 80vw;
+  margin: 0 auto;
+  border-radius: 40px 40px 0 0;
+  box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* styles.css */
+.custom-dialog-container .mat-dialog-container {
+  overflow: hidden;
+}

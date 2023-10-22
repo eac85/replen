@@ -11,14 +11,16 @@ import { MatCardModule } from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ReplenCardComponent } from './replen-card/replen-card.component';
+import { ModalContentComponent } from './modal-content/modal-content.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     InputFormComponent,
-    ReplenCardComponent
+    ModalContentComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +31,9 @@ import { ReplenCardComponent } from './replen-card/replen-card.component';
     MatGridListModule,
     MatCardModule,
     MatSelectModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,9 +1,14 @@
+.color-scheme1{
+  text-align: center;
+}
 .example-form {
   min-width: 150px;
   max-width: 500px;
   width: 100%;
 }
-
+button {
+  border-radius: 100px;
+}
 .example-full-width {
   width: 100%;
 }
@@ -19,20 +24,14 @@
 }
 
 .container {
-    background-color: #87b6bd;
-    width: 90%;
+    width: 50%;
     overflow: auto;
+    text-align: center;
 }
 mat-card {
   width: 100%;
-  background-color: #DCF46F;
   color: navy;
-  display: block;
-}
-
-.color-scheme1 {
-  background-color: #F2E9DE;
-  color: #577AB6;
+  border-radius: 20px;
 }
 
 /* Custom CSS class for the mat-form-field */
@@ -77,5 +76,17 @@ mat-list { overflow: auto; }
 .scrollable-container {
   height: 300px; /* Set a fixed height for the scrollable container */
   overflow-y: auto; /* Enable vertical scrolling */
+}
+
+h2 {
+  color: #EAD9C6;
+}
+
+
+.sticky-button {
+  position: fixed;
+  bottom: 20px; /* Adjust the distance from the bottom */
+  right: 20px; /* Adjust the distance from the right */
+  z-index: 999; /* Set a high z-index to ensure it's displayed on top of other elements */
 }
 

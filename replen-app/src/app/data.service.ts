@@ -11,6 +11,7 @@ export class DataService {
   }
 
   getSubmittedData(): any[] {
+    console.log(this.submittedData);
     return this.submittedData;
   }
 }
