@@ -35,6 +35,10 @@ export class InputFormComponent {
       this.dataService = dataService;
     }
 
+
+  // Split the data into two columns
+
+
   closeCard(data: any) {
     const index = this.dataService.getSubmittedData().indexOf(data);
     if (index !== -1) {

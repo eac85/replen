@@ -21,6 +21,7 @@ export class ModalContentComponent {
   showAlignedContent: boolean = true;
   dataService: DataService;
   count: number = -1;
+  columns: any;
 
   constructor(dataService: DataService) {
       this.xsSizeAmount = 0; // or any other default value you want to assign
@@ -31,6 +32,7 @@ export class ModalContentComponent {
       this.styleCode = '0';
       this.colorCode = '0';
       this.dataService = dataService;
+      this.columns = this.chunkArray(this.dataService.getSubmittedData(), 2);
     }
 
     submitForm() {
@@ -47,6 +49,7 @@ export class ModalContentComponent {
     };
     this.dataService.addSubmittedData(newData); 
     //this.showAlignedContent = true;
+     this.columns = this.chunkArray(this.dataService.getSubmittedData(), 2);
     this.clearData();
   }
 
@@ -73,6 +76,14 @@ export class ModalContentComponent {
       this.xlSizeAmount= 0; 
       this.styleCode = '0';
       this.colorCode = '0';
+  }
+
+  chunkArray(array: any[], size: number): any[] {
+    const chunkedArr = [];
+    for (let i = 0; i < array.length; i += size) {
+      chunkedArr.push(array.slice(i, i + size));
+    }
+    return chunkedArr;
   }
 
 }

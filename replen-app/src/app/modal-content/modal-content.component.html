@@ -1,9 +1,6 @@
 <div class = "modal-container custom-dialog-container mat-dialog-container">
 <div class="color-scheme1">
-<mat-grid-list cols="1" rowHeight="500px">
-  <mat-grid-tile>
-    <div>
-      <div>
+      <div class="container">
         <mat-form-field class="custom-form-field">
           <mat-label class="custom-label">Style Code:</mat-label>
           <input matInput class="custom-input" matInput [(ngModel)]="styleCode" placeholder="Enter style code">
@@ -16,8 +13,7 @@
           <input matInput [(ngModel)]="colorCode" placeholder="Enter color code">
         </mat-form-field>
       </div>
-    </div>
-    <div>
+
       <div>
         <mat-form-field>
           <mat-label>XS:</mat-label>
@@ -49,8 +45,5 @@
         </mat-form-field>
       </div>
       <button mat-raised-button  (click)="submitForm()" class="custom-primary-button">Submit</button>
-    </div>
-  </mat-grid-tile>
-</mat-grid-list>
 </div>
 </div>

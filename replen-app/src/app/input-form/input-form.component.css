@@ -24,7 +24,7 @@ button {
 }
 
 .container {
-    width: 50%;
+    width: 80%;
     overflow: auto;
     text-align: center;
 }
@@ -78,7 +78,7 @@ mat-list { overflow: auto; }
   overflow-y: auto; /* Enable vertical scrolling */
 }
 
-h2 {
+h1 {
   color: #EAD9C6;
 }
 
@@ -88,5 +88,14 @@ h2 {
   bottom: 20px; /* Adjust the distance from the bottom */
   right: 20px; /* Adjust the distance from the right */
   z-index: 999; /* Set a high z-index to ensure it's displayed on top of other elements */
+}
+
+.centered-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* This ensures the content is centered vertically within the viewport */
+  text-align: center; /* If you want to center inline content inside the container */
 }
 
